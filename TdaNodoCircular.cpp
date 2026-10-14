@@ -1,18 +1,6 @@
 #include <iostream>
 using namespace std;
 
-struct usuario {
-	int codigo;
-    string nombre;
-    string url;
-    string accion;
-};
-
-struct nodo {
-    usuario info;
-    nodo* sig;
-};
-
 usuario SolicitarInfo() {
     usuario temp;
     cout << "Nombre: ";

@@ -6,17 +6,16 @@
 
 using namespace std;
 
-struct nodo{
+struct nodoPila{
 	string info;
-	nodo *sig;
+	nodoPila *sig;
 };
 struct TDAalejo{
-	nodo *tope;
+	nodoPila *tope;
 };
-
-nodo *crearNodo(); 
-nodo *crearnodo(string info);
-void imprimirndo(nodo *imp);
+ 
+nodoPila *crearnodoPila(string info);
+void imprimirndo(nodoPila *imp);
 
 
 TDAalejo *crearPila();
