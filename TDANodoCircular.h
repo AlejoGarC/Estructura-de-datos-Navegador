@@ -4,13 +4,14 @@
 #include<iostream>
 #include <string>
 #include "TDAalejo.h"
+
 struct usuario {
 	int codigo;
     string nombre;
     string url;
     string accion;
-    TDAalejo recents;   
-	TDAalejo y;
+    TDAalejo *recents;   
+	TDAalejo *y;
 };
 
 struct nodo {

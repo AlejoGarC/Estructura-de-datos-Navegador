@@ -32,8 +32,8 @@ void eliminar(TDAalejo *&p) {
 	}
 }
 
-nodoPila *crearnodoPila (info){
-    nodo* nuevo = new nodo;
+nodoPila *crearnodoPila (string info){
+    nodoPila* nuevo = new nodo;
     nuevo->info = info;
     nuevo->sig = nullptr;
     return nuevo;

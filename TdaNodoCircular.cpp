@@ -1,4 +1,7 @@
 #include <iostream>
+#include "TDANodoCircular.cpp"
+#include "TDAListaCircular.h"
+#include "TDANodoCircular.h"
 using namespace std;
 
 usuario SolicitarInfo() {

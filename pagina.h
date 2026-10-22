@@ -9,8 +9,9 @@ struct pagina{
 	TDAListaCircular *pestanas;
 };
 
-pagina *crearPagina();
+void *crearPagina(TDAListaCircular *&lista);
 void nuevaPestana(pagina *p);
-void moverse(pagina *p);
-void visitar(pagina *p, string url);
+void recents (nodo *p);
+void controly (nodo *p, TDAalejo *pila1);
+void mostrar(pagina *p);
 #endif

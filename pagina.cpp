@@ -1,52 +1,53 @@
 #include "pagina.h"
 #include <iostream>
+#include <iomanip>
 /*Las funciones no deben seguir recibiendo pagina, hay que crear una funcion que funcione 
 para cualquier otra donde se retorne el nodo actual, o que cada funcion pueda hacerlo, para que este se reciba entre
 ellas y poder editar EL NODO (pestana) que el usuario quiere modificar , no las paginas enteras, ya que cuando se 
 quiere hacer una modificacion hay que empezar por la cabeza , cuando es posible que el usuario quiera el nodo del medio*/
-pagina *crearPagina(TDAListaCircular *&lista){ //crea la pagina 
-	if (esvacia)
+void *crearPagina(TDAListaCircular *&lista){ //crea la pagina 
+	if (esVacia){
+	
 		TDAListaCircular *lista= new TDAListaCircular;
 		TDAListaCircular *pagina = new TDAListaCircular;
-		nodo *nuevo= new nodo;
+		usuario *nuevo= new usuario;
 		
 		lista= Inicilizar();
 		nuevo = CrearNodo();
-		pagina = crearLista(lista *c, nuevo)
-		nuevaPestana(pagina);
-		
+		pag = crearLista(lista c, nuevo);
+		nuevaPestana(pag);
 	}else{
 		cout<<"Solo puedes tener una pagina abierta en curso. Abre una nueva pestaña"<<endl;
 	}
-	return pagina;
+	
 }
 
 void nuevaPestana(pagina *p){ //crea la pestaña 
-	nodo *usuario= new nodo;
-	pagina *pestana= new pestana;
+	nodo *user= new nodo;
+	nodo *aux = new nodo;
+	user = CrearNodo();
 	if (p->pestanas->cab==p->pestanas->cola==nullptr){
 		pestana=p->pestanas->cab;
 		pestana=p->pestanas->cola;
 	}else{
 		p->pestanas->cola= aux;
-		
+		aux->sig = user;
+		p->pestanas->cola = user;
 	}
+	pestana = addNodo(pagina, nodo *user);
 	TDAalejo pila1 = new TDAalejo;
-	int estado;
-	usuario = CrearNodo();
-	pestana = addNodo(pagina, nodo *n);
 	pila1 = crearPila();
-	recents(pestana, pila1);	
+	recents(usuario, pila1);	
 }
 
-void recents (pagina *p, historial *pila1){
+void recents (nodo *p){
 	string dato;
 	cout<< "Ingrese una nueva accion"<<endl;
 	getline(cin,dato);
-	insertar(pila1 , dato);
-	p->pestanas->cab->info->recents=pila1;
+	insertar(usuario , dato);
+	p->info->recents=pila1;
 }
-void controly (pagina *p, TDAalejo *pila1){
+void controly (nodo *p, TDAalejo *pila1){
 	int opcion;
 	string dato;
 	pila1 = p->pestanas->cab->info->recents;
@@ -79,7 +80,7 @@ void mostrar(pagina *p){
     cout << string(120, '-') << endl;
     p = p->pestanas->cab;
     while (p->sig!=p){
-    	cout << left << setw(30) << p << setw(90) << p->hist->recents->tope;
+    	cout << left << setw(30) << p << setw(90) << p->pestanas->cab->info->recents;
     	p= p->sig;
 	}
     
